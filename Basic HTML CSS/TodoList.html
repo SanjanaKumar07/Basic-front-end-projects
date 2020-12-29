@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>TO-DO LIST</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style media="screen">
+
+      body{
+
+        text-align:center;
+        background-color: black;
+       /* background-image: radial-gradient(circle, aqua, dodgerblue); */
+
+      }
+
+      .first{
+
+        
+
+        height:120px;
+
+        margin-left:250px;
+
+        margin-right:250px;
+
+        margin-top:100px;
+
+
+
+      }
+
+      .firstchild{
+
+        margin-top:20px;
+
+        color:white;
+
+      }
+
+      #firstspan{
+
+
+        width: 130px;
+
+        padding-top:30px;
+
+      }
+
+      #taskbar{
+
+
+
+        width:500px;
+
+        height:40px;
+
+        margin-right: 0px;
+
+        text-align:center;
+
+        font-size:16px;
+
+      }
+
+
+
+      .btn1{
+
+
+
+        width:100px;
+
+        height:40px;
+
+        color:#555;
+        background-color: cornflowerblue;
+
+        transition: 0.5s;
+
+      }
+
+      .btn1:hover{
+
+        color:#bbb;
+
+
+
+
+
+      }
+
+      ul{
+
+        list-style:none;
+
+        margin:0;
+
+        padding:0;
+
+      }
+
+      li{
+
+        margin-left:250px;
+
+        margin-right:250px;
+
+
+
+        padding:8px 0;
+
+        font-size: 25px;
+
+        color: white;
+
+        cursor:pointer;
+
+      }
+
+
+
+
+
+      li:nth-child(odd){
+
+        
+        padding:8px 0;
+
+
+
+      }
+
+      li:nth-child(even){
+
+        
+
+        padding:8px 0;
+
+
+
+      }
+
+      li:hover{
+
+       
+
+        color: black;
+
+        transition: 0.6s;
+
+      }
+
+      .remove{
+
+        position: absolute;
+
+        margin-left: 550px;
+
+        margin-bottom: 140px;
+
+        padding: 12px 6px;
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="first">
+
+    <div class="firstchild">
+
+      <h2>TO-DO LIST</h2>
+
+    </div>
+
+      <input id="taskbar" type="text" name="" value="" placeholder="Enter the things you want to do today!">
+
+      <button type="button" name="button" class="btn1"><b>ADD</b></button>
+
+    </div>
+
+    <ul class="taskList">
+
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+
+    </ul>
+
+    <script type="text/javascript">
+
+    $("document").ready(function(){
+
+
+
+
+
+
+
+      $(".btn1").click(function(){
+
+        var newTask=$("#taskbar").val();
+
+        if(newTask=="")
+
+        {
+
+            alert("YOU MUST ENTER SOMETHING!");
+
+        }
+
+        else
+
+        {
+
+          var items=$(".taskList li")
+
+          items.each(function(li){
+
+          if(li==items.length-1)
+
+          {
+
+            var newTask1="<li>"+newTask+"</li>";
+
+
+
+            $(this).after(newTask1);
+
+
+
+
+
+
+
+          }
+
+          else
+
+          {
+
+            return;
+
+          }
+
+        });
+
+
+
+      }
+
+      });
+
+      $(document).on("click","li",function(){
+
+
+
+
+
+      $(this).css("text-decoration" , "line-through");
+
+      $(this).css("background-color" , "lightgrey")
+
+      console.log($(this).width());
+
+      $(this).addClass('checked');
+
+
+
+
+
+      });
+
+      $(document).on("dblclick","li",function(){
+
+
+
+
+
+
+
+      $(this).fadeOut('slow');
+
+
+
+      });
+
+
+
+  });
+
+
+
+    </script>
+
+  </body>
+
+</html>

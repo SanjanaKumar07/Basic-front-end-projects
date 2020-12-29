@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<style>
+    button{
+        color: aqua;
+        background-color: bisque;
+    }
+</style>
+  </head>
+  <script type="text/javascript">
+    function foo(){
+      var i = 0;
+      var db = {
+        'sherlock homes':4,
+        'series 24':4.0,
+        'tom and jerry':5,
+        'avengers endgame':4.5
+      }
+      var x;
+      for( x in db){
+        document.getElementById('div').innerHTML += 'key: '+x+' <br>  rating is: '+db[x]+'<br><br>'
+      }
+    }
+  </script>
+  <body>
+    <button type="button" onclick="foo();" name="button">Click me</button><br><br>
+    <div id="div">
+
+    </div>
+  </body>
+</html>

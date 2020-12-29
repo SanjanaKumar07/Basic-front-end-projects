@@ -1,0 +1,27 @@
+h1{
+	background-color:#253028;
+	color: white;
+	margin: 0px;
+	padding: 5px;
+}
+body{
+	margin: 0px;
+	background-color: #0755a3
+}
+caption{
+	margin-top: 15px;
+	color: white;
+	font-size: 20px;
+	background-color: #4b8ccc;
+}
+td{
+	color: white;
+	font-size: 15px;
+	padding-right: 25px;
+	border-bottom:dotted;
+}
+th{
+	color: white;
+	font-size: 15px;
+	padding-right: 25px;
+}

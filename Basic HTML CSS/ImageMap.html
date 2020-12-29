@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+    <style>
+        body{
+           background-image: url("sky.jpg");
+           background-attachment: scroll; 
+           background-size: cover;
+        }
+        .container{
+            float: left;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- src = source of image and alt = words which represent the image so if the image doesn't load the user
+     will still get a gist of the image -->
+     <div class="container">
+        <h3> Click on the flower to see a beautiful sunflower.</h3>
+        <img src="https://images.unsplash.com/photo-1548192746-dd526f154ed9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Pink flower" 
+        style="width: 500px; height: 300px; padding: 5px;" usemap="#flower">
+        <map name="flower">
+        <area shape="circle" coords="250,150,80" alt="Sunflower" href="https://wallpaperaccess.com/full/871983.jpg">
+        </map>
+     </div>
+     <div class="container">
+        <h3>Click on the computer</h3>
+        <img src="https://www.w3schools.com/html/workplace.jpg" alt="workplace" style="width: 500px; height: 500px; padding: 5px;"
+        usemap="#comp">
+        <map name="comp">
+        <area shape="rect" coords="50,50,350,450" href="https://www.w3schools.com/w3images/mac.jpg" alt="Cool computer">
+        </map>
+     </div>
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>WDL EXP 6</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            nav{
+                width: 30%;
+            }
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              background-color: #333;
+            }
+            
+            li {
+              float: left;
+            }
+            
+            li a {
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+            
+            li a:hover {
+              background-color: #111;
+            }
+            </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
+              </ul>
+        </nav>
+        <section id = 'main'><h4>Hi! Welcome to my page :)</h4></section>
+        <script>
+            var app = {
+                nav : $('nav ul li a'),
+                content : $('section#main')
+            };
+            app.putContent = function(content){
+                this.content.html(content);
+            }
+            app.loadPage = function(pagename){
+                $.ajax({
+                    url : 'page.php',
+                    type : 'GET',
+                    dataType:'html',
+                    data : {page:pagename},
+                    success : function(response){
+                        console.log("success",+response);
+                        app.putContent(response);
+                    },
+                    error : function(error){
+                        console.log(error);
+                        app.putContent('we cannot find the page');
+                    }
+                });
+            }
+            app.init = function(){
+                app.nav.on('click',function(){
+                    console.log("initiated");
+                    var page = $(this).text();
+                    
+                    console.log(page);
+                    app.loadPage(page);
+                });
+            }();
+        </script>
+    </body>
+
+</html>

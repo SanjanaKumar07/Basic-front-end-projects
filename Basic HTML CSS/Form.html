@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form</title>
+</head>
+<body>
+	<!-- action - where the form sends data to -->
+	<!-- method - what HTTP method(get/post) -->
+	 <form action="https://www.google.com/" method="GET">  
+		<!-- Just for now. We'll use backend data when we do it instead of google -->
+		<input type="text" name="name" id="name" placeholder="First Name">
+		<input type="text" placeholder="Last Name">
+		<input type="password" name="password" id="password" placeholder="Password">
+		<input type="submit" value="Submit">
+	
+		<br>
+		<label for="color">Pick Colour : </label>
+		<input type="color" name="color" id="color">
+		<label for="date"> Birthday : </label>
+		<input type="date" name="" id="date" >
+	</form>
+		<!-- Validations -->
+		<form action="#">
+		<br>
+		<input type="email" name="email" id="email" placeholder="Email" required>
+		<input type="password" name="password" id="password" placeholder="Password" required>
+		<input type="submit" value="Submit">
+	</form>
+	<form action="#">
+		<!-- Dropdowns and Radio buttons -->
+		<p>What do you prefer?</p>
+		<label for="dog">Dogs : </label>
+		<input type="radio" name="petchoice" id="dog" value="dogs">
+		<label for="cat">Cats : </label>
+		<input type="radio" name="petchoice" id="cat" value="cats">
+		
+		<p>What is your favourite colour?</p>
+		<select name="color" id="color">
+			<option value="Red">Red</option>
+			<option value="Yellow">Yellow</option>
+			<option value="Blue">Blue</option>
+		</select>
+		<button>Go!</button>
+		<p>Write your story</p>
+		<textarea name="write" id="write" cols="30" rows="10"></textarea>
+	</form>
+</body>
+</html>

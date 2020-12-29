@@ -1,0 +1,14 @@
+table{
+	border: solid;
+	border-width: 3px;
+}
+td{
+	border: solid;
+	border-width: 3px;
+}
+caption{
+	font-size: 7mm;
+}
+.total{
+	background-color: grey;
+}
